@@ -48,7 +48,7 @@ int	bercheck(char *s)
 	if (s[i - 1] != 'r' && s[i - 2] != 'e' && s[i - 3] != 'b' && \
 		s[i - 4] != '.')
 	{
-		printf("Wrong file name!!\n");
+		printf("Wrong file name!\n");
 		return (0);
 	}
 	return (1);
