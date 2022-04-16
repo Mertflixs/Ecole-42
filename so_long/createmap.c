@@ -99,7 +99,7 @@ void	setup(t_list *main)
 int	createmap(t_list *main, char *file)
 {
 	main->fd = open(file, O_RDONLY);
-	if (main->fd == 0)
+	if (main->fd == -1)
 	{
 		printf("Error\n");
 		exit(0);
