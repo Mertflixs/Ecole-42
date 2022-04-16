@@ -49,19 +49,3 @@ char	*get_next_line(int fd)
 	left_str = ft_new_left_str(left_str);
 	return (line);
 }
-
-/*  int	main(void)
-{
-	int		fd1;
-	char	*line;
-	int		i;
-
-	fd1 = open("test", O_RDONLY);
-	line = get_next_line(fd1);
-	while (i <= 5)
-	{
-		printf("%d %s",i+1,line);
-		line = get_next_line(fd1);
-		i++;
-	}
-}  */
