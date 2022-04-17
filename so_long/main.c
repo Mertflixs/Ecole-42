@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 10:37:52 by eguler            #+#    #+#             */
-/*   Updated: 2022/04/17 15:03:31 by agunes           ###   ########.fr       */
+/*   Updated: 2022/04/17 18:23:48 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	move(int keycode, t_list *main)
 		moveleft(main);
 	if (keycode == 53)
 	{
+		printf("%sGAME OVER !\n", "\x1B[32m");
 		exit (0);
 		return (0);
 	}
@@ -42,7 +43,7 @@ int	move(int keycode, t_list *main)
 	putcount(main);
 	if (main->movecount > 498)
 	{
-		ft_printf("GAME OVER !\n");
+		ft_printf("%sGAME OVER !\n", "\x1B[31m");
 		exit (0);
 	}
 	return (1);
@@ -58,10 +59,17 @@ int	bercheck(char *s)
 	if (s[i - 1] != 'r' && s[i - 2] != 'e' && s[i - 3] != 'b' && \
 		s[i - 4] != '.')
 	{
-		ft_printf("Wrong file name!\n");
+		ft_printf("%sWrong file name!\n", "\x1B[31m");
 		return (0);
 	}
 	return (1);
+}
+
+int	xbutton(t_list *main)
+{
+	ft_printf("%sGAME OVER !\n", "\x1B[31m");
+	exit(0);
+	return (0);
 }
 
 int	main(int ac, char **av)
@@ -76,11 +84,12 @@ int	main(int ac, char **av)
 		if (!(createmap(main, av[1])))
 			return (0);
 		mlx_hook(main->win, 2, 1L << 0, move, main);
+		mlx_hook(main->win, 17, 0, &xbutton, main);
 		mlx_loop(main->mlx);
 	}
 	else
 	{
-		ft_printf("Error\n");
+		ft_printf("%sError\n", "\x1B[31m");
 		exit(0);
 	}
 }
