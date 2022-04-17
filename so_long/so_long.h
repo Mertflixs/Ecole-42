@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 10:45:37 by eguler            #+#    #+#             */
-/*   Updated: 2022/04/17 13:00:23 by agunes           ###   ########.fr       */
+/*   Updated: 2022/04/17 14:45:29 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ void	moveright(t_list *main);
 void	moveleft(t_list *main);
 int		checkarray(t_list *main);
 void	ft_exit(t_list *main);
+char	*ft_itoa(int n);
 
 #endif

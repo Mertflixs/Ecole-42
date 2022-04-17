@@ -6,11 +6,21 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 10:37:52 by eguler            #+#    #+#             */
-/*   Updated: 2022/04/17 13:03:47 by agunes           ###   ########.fr       */
+/*   Updated: 2022/04/17 15:03:31 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	putcount(t_list *main)
+{
+	char	*buff;
+
+	buff = ft_itoa(main->movecount + 1);
+	mlx_string_put(main->mlx, main->win, 20, 40, 0xFFFFFF, "Count ->");
+	mlx_string_put(main->mlx, main->win, 150, 40, 0xFFFFFF, buff);
+	free(buff);
+}
 
 int	move(int keycode, t_list *main)
 {
@@ -29,8 +39,8 @@ int	move(int keycode, t_list *main)
 	}
 	mlx_clear_window(main->mlx, main->win);
 	putimage(main);
-	ft_printf("%d\n", main->movecount);
-	if (main->movecount > 499)
+	putcount(main);
+	if (main->movecount > 498)
 	{
 		ft_printf("GAME OVER !\n");
 		exit (0);
