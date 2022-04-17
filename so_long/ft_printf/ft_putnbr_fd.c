@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/15 18:24:10 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/16 15:47:51 by agunes           ###   ########.fr       */
+/*   Created: 2022/02/15 17:32:47 by agunes            #+#    #+#             */
+/*   Updated: 2022/02/23 13:29:41 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-char	*ft_strdup(char *src)
+int	ft_putnbr_fd(int n, int *len)
 {
-	int		i;
-	int		len;
-	char	*str;
-
-	len = 0;
-	i = 0;
-	len = ft_strlen(src);
-	str = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (!str)
+	if (n == -2147483648)
 	{
-		return (0);
+		*len += ft_putchar_fd('-');
+		*len += ft_putchar_fd('2');
+		n = 147483648;
 	}
-	i = 0;
-	while (i < len)
+	if (n < 0)
 	{
-		str[i] = src[i];
-		i++;
+		*len += ft_putchar_fd('-');
+		n *= -1;
 	}
-	str[i] = '\0';
-	return (str);
+	if (n >= 0 && n <= 9)
+		*len += ft_putchar_fd(n + 48);
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, len);
+		ft_putnbr_fd(n % 10, len);
+	}
+	return (*len);
 }

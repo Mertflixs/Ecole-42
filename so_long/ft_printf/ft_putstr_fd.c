@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/15 18:24:10 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/16 15:47:51 by agunes           ###   ########.fr       */
+/*   Created: 2022/02/15 17:32:53 by agunes            #+#    #+#             */
+/*   Updated: 2022/02/15 17:32:55 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-char	*ft_strdup(char *src)
+int	ft_putstr_fd(char *s)
 {
-	int		i;
-	int		len;
-	char	*str;
+	int	i;
 
-	len = 0;
-	i = 0;
-	len = ft_strlen(src);
-	str = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (!str)
+	if (s == NULL)
 	{
-		return (0);
+		write(1, "(null)", 6);
+		return (6);
 	}
 	i = 0;
-	while (i < len)
+	while (s[i] != 0)
 	{
-		str[i] = src[i];
+		ft_putchar_fd(s[i]);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	return (i);
 }

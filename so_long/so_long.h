@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 17:07:30 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/16 17:07:31 by agunes           ###   ########.fr       */
+/*   Created: 2022/04/15 10:45:37 by eguler            #+#    #+#             */
+/*   Updated: 2022/04/17 13:00:23 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include "ft_printf/ft_printf.h"
 //# include "libft/libft.h"
 
 typedef struct s_list

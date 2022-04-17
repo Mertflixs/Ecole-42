@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 17:07:22 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/16 17:07:25 by agunes           ###   ########.fr       */
+/*   Created: 2022/04/15 10:37:52 by eguler            #+#    #+#             */
+/*   Updated: 2022/04/17 13:03:47 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int	move(int keycode, t_list *main)
 	}
 	mlx_clear_window(main->mlx, main->win);
 	putimage(main);
-	printf("%d\n", main->movecount);
+	ft_printf("%d\n", main->movecount);
 	if (main->movecount > 499)
 	{
-		printf("GAME OVER !\n");
+		ft_printf("GAME OVER !\n");
 		exit (0);
 	}
 	return (1);
@@ -48,7 +48,7 @@ int	bercheck(char *s)
 	if (s[i - 1] != 'r' && s[i - 2] != 'e' && s[i - 3] != 'b' && \
 		s[i - 4] != '.')
 	{
-		printf("Wrong file name!\n");
+		ft_printf("Wrong file name!\n");
 		return (0);
 	}
 	return (1);
@@ -70,7 +70,7 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		printf("Error\n");
+		ft_printf("Error\n");
 		exit(0);
 	}
 }

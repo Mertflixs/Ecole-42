@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_unsigned.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/15 18:24:10 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/16 15:47:51 by agunes           ###   ########.fr       */
+/*   Created: 2022/02/15 17:33:00 by agunes            #+#    #+#             */
+/*   Updated: 2022/02/23 13:52:10 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-char	*ft_strdup(char *src)
+int	ft_unsigned(unsigned int n, int *len)
 {
-	int		i;
-	int		len;
-	char	*str;
-
-	len = 0;
-	i = 0;
-	len = ft_strlen(src);
-	str = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (!str)
+	if (n >= 0 && n <= 9)
+		*len += ft_putchar_fd(n + 48);
+	if (n > 9)
 	{
-		return (0);
+		ft_unsigned(n / 10, len);
+		ft_unsigned(n % 10, len);
 	}
-	i = 0;
-	while (i < len)
-	{
-		str[i] = src[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	return (*len);
 }

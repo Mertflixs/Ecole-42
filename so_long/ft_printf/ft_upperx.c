@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_upperx.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/15 18:24:10 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/16 15:47:51 by agunes           ###   ########.fr       */
+/*   Created: 2022/02/15 17:33:06 by agunes            #+#    #+#             */
+/*   Updated: 2022/02/23 13:30:10 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-char	*ft_strdup(char *src)
+int	ft_upperx(unsigned int a, int *len)
 {
-	int		i;
-	int		len;
-	char	*str;
-
-	len = 0;
-	i = 0;
-	len = ft_strlen(src);
-	str = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (!str)
+	if (a < 16)
 	{
-		return (0);
+		if (a < 10)
+		{
+			*len += ft_putchar_fd(a + 48);
+		}
+		else
+			*len += ft_putchar_fd(a + 55);
 	}
-	i = 0;
-	while (i < len)
+	else
 	{
-		str[i] = src[i];
-		i++;
+		ft_upperx(a / 16, len);
+		ft_upperx(a % 16, len);
 	}
-	str[i] = '\0';
-	return (str);
+	return (*len);
 }

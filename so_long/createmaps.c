@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   createmap.c                                        :+:      :+:    :+:   */
+/*   createmaps.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 17:08:41 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/16 17:07:57 by agunes           ###   ########.fr       */
+/*   Updated: 2022/04/17 12:59:39 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,10 @@ void	setup(t_list *main)
 int	createmap(t_list *main, char *file)
 {
 	main->fd = open(file, O_RDONLY);
-	if (main->fd == -1)
+	if (main->fd < 0)
 	{
-		printf("Error\n");
-		exit(0);
+		ft_printf("Error\n");
+		return (0);
 	}
 	main->map = ft_read(main->fd, main->map);
 	if (!(checkmap(main)))

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 17:07:12 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/16 17:07:53 by agunes           ###   ########.fr       */
+/*   Created: 2022/04/15 10:48:55 by eguler            #+#    #+#             */
+/*   Updated: 2022/04/17 13:02:55 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,17 +125,17 @@ int	checkmap(t_list *main)
 	i = 0;
 	if (!checkarray(main))
 	{
-		printf("Error\n");
+		ft_printf("Error\n");
 		return (0);
 	}
 	if (!checkwalls(main))
 	{
-		printf("Error\n");
+		ft_printf("Error\n");
 		return (0);
 	}
 	if (!checksquare(main))
 	{
-		printf("Error\n");
+		ft_printf("Error\n");
 		return (0);
 	}
 	while (main->map[i])
