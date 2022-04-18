@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 13:42:09 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/17 18:23:21 by agunes           ###   ########.fr       */
+/*   Updated: 2022/04/18 13:22:44 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	moveup(t_list *main)
 		main->map[main->pindex - main->slen - 1] = 'P';
 		main->map[main->pindex] = '0';
 		main->movecount++;
-		main->cc -= 1;
 	}
 	if (main->map[main->pindex - main->slen - 1] == 'E' && main->cc == 0)
 	{
@@ -52,7 +51,6 @@ void	movedown(t_list *main)
 		main->map[main->pindex + main->slen + 1] = 'P';
 		main->map[main->pindex] = '0';
 		main->movecount++;
-		main->cc -= 1;
 	}
 	if (main->map[main->pindex + main->slen + 1] == 'E' && main->cc == 0)
 	{
@@ -77,7 +75,6 @@ void	moveright(t_list *main)
 		main->map[main->pindex + 1] = 'P';
 		main->map[main->pindex] = '0';
 		main->movecount++;
-		main->cc -= 1;
 	}
 	if (main->map[main->pindex + 1] == 'E' && main->cc == 0)
 	{
@@ -102,7 +99,6 @@ void	moveleft(t_list *main)
 		main->map[main->pindex - 1] = 'P';
 		main->map[main->pindex] = '0';
 		main->movecount++;
-		main->cc -= 1;
 	}
 	if (main->map[main->pindex - 1] == 'E' && main->cc == 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 10:48:55 by eguler            #+#    #+#             */
-/*   Updated: 2022/04/17 13:02:55 by agunes           ###   ########.fr       */
+/*   Updated: 2022/04/18 13:22:02 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static int	checksides(t_list *main)
 			x++;
 		if (main->map[i++] == '\n')
 			x = 0;
-		if (x > main->slen)
+		if (x > main->slen || x < main->slen && main->map[x] == '\n')
 			return (0);
 	}
 	return (1);
