@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/15 10:37:52 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/18 13:22:28 by agunes           ###   ########.fr       */
+/*   Created: 2022/04/15 10:37:52 by agunes           #+#    #+#             */
+/*   Updated: 2022/04/18 14:39:13 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	move(int keycode, t_list *main)
 		moveleft(main);
 	if (keycode == 53)
 	{
-		printf("%sGAME OVER !\n", "\x1B[32m");
+		printf("%sElif gülsüz kaldı.... !\n", "\x1B[31m");
 		exit (0);
 		return (0);
 	}
@@ -43,7 +43,7 @@ int	move(int keycode, t_list *main)
 	putcount(main);
 	if (main->movecount > 498)
 	{
-		ft_printf("%sGAME OVER !\n", "\x1B[31m");
+		ft_printf("%sElif gülsüz kaldı.... !\n", "\x1B[31m");
 		exit (0);
 	}
 	return (1);
