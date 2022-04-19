@@ -63,7 +63,7 @@ static int	checksides(t_list *main)
 			x++;
 		if (main->map[i++] == '\n')
 			x = 0;
-		if (x > main->slen || x < main->slen && main->map[x] == '\n')
+		if (x > main->slen || x < main->slen && main->map[i] == '\n')
 			return (0);
 	}
 	return (1);
