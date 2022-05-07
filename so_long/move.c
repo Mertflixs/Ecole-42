@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 13:42:09 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/18 14:39:32 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/07 16:54:43 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	moveup(t_list *main)
 	{
 		ft_printf("%sTebrikler gülleri %d adımda Elif'e ulaştırdınız.", \
 		"\x1B[32m", main->movecount + 2);
+		ft_free(main);
 		exit(0);
 	}
 }
@@ -56,6 +57,7 @@ void	movedown(t_list *main)
 	{
 		ft_printf("%sTebrikler gülleri %d adımda Elif'e ulaştırdınız.", \
 		"\x1B[32m", main->movecount + 2);
+		ft_free(main);
 		exit(0);
 	}
 }
@@ -80,6 +82,7 @@ void	moveright(t_list *main)
 	{
 		ft_printf("%sTebrikler gülleri %d adımda Elif'e ulaştırdınız.", \
 		"\x1B[32m", main->movecount + 2);
+		ft_free(main);
 		exit(0);
 	}
 }
@@ -104,6 +107,7 @@ void	moveleft(t_list *main)
 	{
 		ft_printf("%sTebrikler gülleri %d adımda Elif'e ulaştırdınız.", \
 		"\x1B[32m", main->movecount + 2);
+		ft_free(main);
 		exit(0);
 	}
 }

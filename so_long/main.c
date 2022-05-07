@@ -12,14 +12,15 @@
 
 #include "so_long.h"
 
-void	putcount(t_list *main)
+void	ft_free(t_list *main)
 {
-	char	*buff;
-
-	buff = ft_itoa(main->movecount + 1);
-	mlx_string_put(main->mlx, main->win, 20, 40, 0xFFFFFF, "Count ->");
-	mlx_string_put(main->mlx, main->win, 150, 40, 0xFFFFFF, buff);
-	free(buff);
+	mlx_destroy_image(main->mlx, main->player);
+	mlx_destroy_image(main->mlx, main->wall);
+	mlx_destroy_image(main->mlx, main->exit);
+	mlx_destroy_image(main->mlx, main->coll);
+	mlx_destroy_window(main->mlx, main->win);
+	free(main->map);
+	free(main);
 }
 
 int	move(int keycode, t_list *main)
@@ -34,15 +35,17 @@ int	move(int keycode, t_list *main)
 		moveleft(main);
 	if (keycode == 53)
 	{
+		ft_free(main);
 		printf("%sElif gülsüz kaldı.... !\n", "\x1B[31m");
 		exit (0);
 		return (0);
 	}
 	mlx_clear_window(main->mlx, main->win);
 	putimage(main);
-	putcount(main);
+	ft_printf("Adım sayısı = %d\n", main->movecount + 1);
 	if (main->movecount > 498)
 	{
+		ft_free(main);
 		ft_printf("%sElif gülsüz kaldı.... !\n", "\x1B[31m");
 		exit (0);
 	}
@@ -67,6 +70,8 @@ int	bercheck(char *s)
 
 int	xbutton(t_list *main)
 {
+	(void)main;
+	ft_free(main);
 	ft_printf("%sGAME OVER !\n", "\x1B[31m");
 	exit(0);
 	return (0);
@@ -81,8 +86,13 @@ int	main(int ac, char **av)
 		if (!bercheck(av[1]))
 			return (0);
 		main = malloc(sizeof(t_list));
-		if (!(createmap(main, av[1])))
+		if (!main)
 			return (0);
+		if (!(createmap(main, av[1])))
+		{
+			free(main);
+			return (0);
+		}
 		mlx_hook(main->win, 2, 1L << 0, move, main);
 		mlx_hook(main->win, 17, 0, &xbutton, main);
 		mlx_loop(main->mlx);

@@ -60,5 +60,6 @@ void	moveleft(t_list *main);
 int		checkarray(t_list *main);
 void	ft_exit(t_list *main);
 char	*ft_itoa(int n);
+void	ft_free(t_list *main);
 
 #endif

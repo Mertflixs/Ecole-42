@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 17:29:00 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/16 15:37:19 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/07 16:36:25 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ static char	*ft_strjoin(char *s1, char *s2)
 	{
 		len = ft_strlen(s1) + ft_strlen(s2) + 1;
 		array = (char *)malloc(sizeof(char) * (len));
+		if (!array)
+			return (0);
 		if (array == NULL)
 			return (0);
 		while (s1[i] != '\0')
@@ -59,10 +61,10 @@ char	*ft_read(int fd, char *left_str)
 	rd_bytes = 1;
 	left_str = ft_strdup("");
 	buff = malloc(sizeof(char) * 1);
+	if (!buff)
+		return (0);
 	while (rd_bytes != 0)
-	{	
-		if (!buff)
-			return (NULL);
+	{
 		rd_bytes = read(fd, buff, 1);
 		if (rd_bytes == -1)
 		{

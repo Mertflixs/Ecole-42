@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 17:08:41 by agunes            #+#    #+#             */
-/*   Updated: 2022/04/17 12:59:39 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/07 16:35:08 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,8 @@ int	createmap(t_list *main, char *file)
 		return (0);
 	}
 	main->map = ft_read(main->fd, main->map);
+	if (!main->map)
+		return (0);
 	if (!(checkmap(main)))
 	{
 		free(main->map);
