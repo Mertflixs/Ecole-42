@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 17:08:41 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/07 16:35:08 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/09 11:28:48 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@ void	sizexy(t_list *main)
 	{
 		if (main->map[i] != '\n' && main->sizey == 0)
 			main->sizex += 64;
-		if (main->map[i] == '\n')
+		if (main->map[i] == '\n' || main->map[i + 1] == '\0')
 			main->sizey += 64;
 		i++;
 	}
-	main->sizey += 64;
 }
 
 void	putimage2(t_list *main, int i)

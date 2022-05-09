@@ -5,7 +5,6 @@ CFLAGS = -Wall -Wextra -Werror -L./mlx -lmlx -framework AppKit -framework OpenGL
 SRCS = main.c \
 	checkmap.c \
 	createmaps.c \
-	ft_itoa.c \
 	ft_strchr.c \
 	ft_strdup.c \
 	move.c		\
