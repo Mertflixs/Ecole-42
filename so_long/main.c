@@ -59,8 +59,8 @@ int	bercheck(char *s)
 	i = 0;
 	while (s[i])
 		i++;
-	if (s[i - 1] != 'r' && s[i - 2] != 'e' && s[i - 3] != 'b' && \
-		s[i - 4] != '.')
+	if (s[i - 1] != 'r' || s[i - 2] != 'e' || s[i - 3] != 'b' || \
+		s[i - 4] != '.' || i < 5)
 	{
 		ft_printf("%sWrong file name!\n", "\x1B[31m");
 		return (0);
