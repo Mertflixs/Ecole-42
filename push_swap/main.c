@@ -6,22 +6,53 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:13:31 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/17 15:45:14 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/18 12:46:45 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    shift_up(t_list *test)
+int *sorted(int *arr, int l)
 {
     int i = 0;
-    int x = test->alen;
-    while(i < x)
+    int j = 0;
+    int temp = 0;
+    int *arr1 = malloc(sizeof(int) * l);
+    while (i < l)
     {
-        test->sa[i] = test->sa[i + 1];
+        arr1[i] = arr[i];
+        i++;    
+    }
+    i = 0;
+    while (i < l)
+    {
+        j = 0;
+        while (j < l)
+        {
+            if(arr1[i] < arr1[j])
+            {
+                temp = arr1[i];
+                arr1[i] = arr1[j];
+                arr1[j] = temp;
+            }
+            j++;
+        }
         i++;
     }
-    test->sa[i] = 0;
+    return arr1;
+}
+
+
+void    shift_up(int *arr, int c)
+{
+    int i = 0;
+    int x = c;
+    while(i < x)
+    {
+        arr[i] = arr[i + 1];
+        i++;
+    }
+    arr[i] = 0;
 }
 
 void	ra(t_list *test)
@@ -29,26 +60,26 @@ void	ra(t_list *test)
     int x;
     x = test->alen;
     int i = 0;
-    int temp = test->sa[0];
+    int temp = test->stacka[0];
     while(i < x)
     {
-        test->sa[i] = test->sa[i + 1];
+        test->stacka[i] = test->stacka[i + 1];
         i++;
     }
-    test->sa[x - 1] = temp;
+    test->stacka[x - 1] = temp;
 }
 
 void	rb(t_list *test)
 {
     int x = test->blen;
     int i = 0;
-    int temp = test->sb[0];
+    int temp = test->stackb[0];
     while(i < x)
     {
-        test->sb[i] = test->sb[i + 1];
+        test->stackb[i] = test->stackb[i + 1];
         i++;
     }
-    test->sb[x - 1] = temp;
+    test->stackb[x - 1] = temp;
 }
 
 void    pb(t_list *test)
@@ -57,13 +88,28 @@ void    pb(t_list *test)
     c = test->alen;
     while(c + 1)
     {
-        test->sb[c + 1] = test->sb[c];
+        test->stackb[c + 1] = test->stackb[c];
         c--;
     }
-    test->sb[0] = test->sa[0];
+    test->stackb[0] = test->stacka[0];
 	test->blen++;
     test->alen--;
-    shift_up(test);
+    shift_up(test->stacka, test->alen);
+}
+
+void pa(t_list *test)
+{
+    int c;
+    c = test->blen;
+    while(c + 1)
+    {
+        test->stacka[c + 1] = test->stacka[c];
+        c--;
+    }
+    test->stacka[0] = test->stackb[0];
+	test->blen--;
+    test->alen++;
+    shift_up(test->stackb, test->blen);
 }
 
 int main(int argc, char **argv)
@@ -75,23 +121,23 @@ int main(int argc, char **argv)
 	int a = 0;
 	int x = argc - 1;
     test->alen = x;
-	test->sa = malloc(sizeof(int) * x);
-	test->sb = malloc(sizeof(int) * x);
-
+	test->stacka = malloc(sizeof(int) * x);
+	test->stackb = malloc(sizeof(int) * x);
+    test->fa1 = malloc(sizeof(int) * x);
+    test->sorted= malloc(sizeof(int) * x);
 	i = 1;
 	while(i <= x)
 	{
-		test->sa[a] = atoi(argv[i]);
+		test->stacka[a] = atoi(argv[i]);
 		i++;
 		a++;
 	}
 	i = 0;
-    ra(test);
-	while(i < x)
-	{
-		printf("[%d] ", test->sa[i]);
-        printf("[%d]\n", test->sb[i]);
-		i++;
-	}
+    test->sorted = sorted(test->stacka, test->alen);
+    for(i = 0; i < argc - 1; i++)
+    {
+        printf("[%d] \n", test->sorted[i]);
+    }
+    i = 0;
 	return (0);
 }
