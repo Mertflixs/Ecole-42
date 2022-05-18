@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:13:35 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/18 13:02:15 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/18 18:14:06 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_list
 	int *sorted;
 	int *stackb;
 	int blen;
+	int tut;
 	int alen;
 }           t_list;
 
