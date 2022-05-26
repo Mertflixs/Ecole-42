@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:19:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/24 13:38:29 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/26 14:33:05 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,25 @@
 
 typedef struct s_list
 {
-	int *stacka;
-	int *stackb;
-	int alen;
-	int blen;
-}           t_list;
+	int	*stacka;
+	int	*stackb;
+	int	*fakea;
+	int	*index;
+	int	maxbit;
+	int	alen;
+	int fakealen;
+	int	blen;
+}		t_list;
+
+void	shift_up(int *arr, int len);
+void	shift_down(int *arr, int len);
+void	ra(t_list *ps, int len);
+void	rb(t_list *ps, int len);
+void	pb(t_list *ps);
+void	pa(t_list *ps);
+void	ft_sort(t_list *ps);
+int		indexbul(t_list *ps);
+void	radix(t_list *ps);
+int		maxbit(t_list *ps);
 
 #endif

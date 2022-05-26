@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 13:20:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/26 15:07:22 by agunes           ###   ########.fr       */
+/*   Created: 2022/05/26 13:34:35 by agunes            #+#    #+#             */
+/*   Updated: 2022/05/26 15:16:10 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	radix(t_list *ps)
 {
-	t_list	*ps;
-	int		i;
-	int		a;
-	int		x;
+	int	i;
+	int	j;
+	int	x;
 
+	j = 0;
 	i = 0;
-	a = 0;
-	x = argc - 1;
-	ps = malloc(sizeof(t_list) * x);
-	ps->stacka = malloc(sizeof(int) * x);
-	ps->stackb = malloc(sizeof(int) * x);
-	ps->fakea = malloc(sizeof(int) * x);
-	ps->index = malloc(sizeof(int) * x);
-	ps->alen = x;
-	ps->fakealen = ps->alen;
-	while (i < x)
+	x = 0;
+	while (i < ps->maxbit)
 	{
-		ps->stacka[i] = atoi(argv[i + 1]);
+		j = 0;
+		x = 0;
+		while (j < ps->fakealen)
+		{
+			x = indexbul(ps);
+			if ((x >> i) & 1)
+				ra(ps, ps->alen);
+			else
+				pb(ps);
+			j++;
+		}
+		while (ps->blen)
+			pa(ps);
 		i++;
 	}
-	ft_sort(ps);
-	ps->maxbit = maxbit(ps);
-	radix(ps);
 }
