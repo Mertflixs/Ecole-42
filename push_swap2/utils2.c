@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:06:28 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/26 16:05:04 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/27 14:54:32 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	shift_up(int *arr, int len)
 		arr[i] = arr1[i];
 		i++;
 	}
-	arr[i] = 0;
 }
 
 void	shift_down(int *arr, int len)
@@ -55,7 +54,7 @@ void	shift_down(int *arr, int len)
 	arr[0] = 0;
 }
 
-int	indexbul(t_list *ps)
+int	indexbul(t_list *ps, int nbr)
 {
 	int	i;
 	int	j;
@@ -63,7 +62,7 @@ int	indexbul(t_list *ps)
 	i = 0;
 	while (i < ps->fakealen)
 	{
-		if (ps->stacka[0] == ps->fakea[i])
+		if (nbr == ps->fakea[i])
 			return (i);
 		i++;
 	}
@@ -75,12 +74,13 @@ int	maxbit(t_list *ps)
 	int		i;
 	int		a;
 
-	i = 0;
+	i = 16;
 	a = ps->alen;
-	while (a)
+	while (i >= 0)
 	{
-		a >>= 1;
-		i++;
+		if ((a >> i) & 1)
+			return (i + 1);
+		i--;
 	}
 	return (i);
 }

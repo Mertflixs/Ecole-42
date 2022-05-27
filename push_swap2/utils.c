@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:05:49 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/26 15:18:48 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/27 15:12:08 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ void	ra(t_list *ps, int len)
 
 	i = 0;
 	temp = ps->stacka[0];
+	
 	while (i < len - 1)
 	{
 		ps->stacka[i] = ps->stacka[i + 1];
 		i++;
 	}
-	ps->stacka[i] = temp;
+	ps->stacka[ps->alen - 1] = temp;
 	printf("ra\n");
 }
 
@@ -84,7 +85,7 @@ void	pa(t_list *ps)
 	printf("pa\n");
 }
 
-void	ft_sort(t_list *ps)
+int	ft_sort(t_list *ps)
 {
 	int	i;
 	int	j;
@@ -108,4 +109,16 @@ void	ft_sort(t_list *ps)
 			}
 		}
 	}
+	j = 0;
+	i = 0;
+	while(i < ps->alen)
+	{
+		if(ps->fakea[i] == ps->stacka[i])
+			j++;
+		i++;
+	}
+	if(j == i)
+		return (0);
+	else
+		return (1);
 }

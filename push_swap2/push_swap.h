@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:19:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/26 14:33:05 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/27 15:00:21 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	ra(t_list *ps, int len);
 void	rb(t_list *ps, int len);
 void	pb(t_list *ps);
 void	pa(t_list *ps);
-void	ft_sort(t_list *ps);
-int		indexbul(t_list *ps);
+int		ft_sort(t_list *ps);
+int		indexbul(t_list *ps, int nbr);
 void	radix(t_list *ps);
 int		maxbit(t_list *ps);
 
