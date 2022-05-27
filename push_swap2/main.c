@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:20:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 16:58:49 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/27 17:11:28 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int	main(int argc, char **argv)
 		ps->stacka[i] = atoi(argv[i + 1]);
 		i++;
 	}
-	if (!ft_sort(ps))
+	ft_sort(ps);
+	if (!sortcontrol(ps))
 		return (0);
 	radix(ps);
 }

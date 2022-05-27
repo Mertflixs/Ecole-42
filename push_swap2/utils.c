@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:05:49 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 17:05:33 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/27 17:10:44 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	pa(t_list *ps)
 	printf("pa\n");
 }
 
-int	ft_sort(t_list *ps)
+void	ft_sort(t_list *ps)
 {
 	int	i;
 	int	j;
@@ -92,8 +92,6 @@ int	ft_sort(t_list *ps)
 			}
 		}
 	}
-	if (!sortcontrol(ps))
-		return (0);
 }
 
 int	sortcontrol(t_list *ps)
