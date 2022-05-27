@@ -32,7 +32,6 @@ void	setup(t_list *ps, int x, char **argv)
 		while (ps->split[j])
 			ps->stacka[k++] = ft_atoi(ps->split[j++], ps);
 		free(ps->split[0]);
-		free(ps->split[1]);
 		free(ps->split);
 		i++;
 	}

@@ -23,18 +23,19 @@ int	ft_atoi(char *str, t_list *ps)
 	isaret = 1;
 	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 		isaret -= (str[i++] == '-') * 2;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		sayi = (sayi * 10) + str[i] - '0';
-		i++;
-		if (sayi * isaret > 2147483647)
-			ft_exit(ps);
-		if (sayi * isaret < -2147483648)
-			ft_exit(ps);
+		sayi = (sayi * 10) + str[i++] - '0';
+		if (sayi * isaret > 2147483647 || \
+			sayi * isaret < -2147483648)
+			ft_exit(ps, 0);
 	}
 	if (str[i] != '\0')
-		ft_exit(ps);
+		ft_exit(ps, 0);
+	if ((str[0] == '+' && str[1] == '\0') || \
+		(str[0] == '-' && str[1] == '\0'))
+		ft_exit(ps, 0);
 	return (sayi * isaret);
 }

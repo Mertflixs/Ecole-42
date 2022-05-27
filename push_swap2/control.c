@@ -19,7 +19,7 @@ int same(t_list *ps)
             if (ps->stacka[j] == ps->stacka[i])
                 sayi++;
             if (sayi > 1)
-                return (0);
+                ft_exit(ps, 1);
             j++;
         }
         i++;
