@@ -6,12 +6,11 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:12:36 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 18:19:53 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/27 18:45:19 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	ft_atoi(char *str)
 {
