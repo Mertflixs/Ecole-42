@@ -6,34 +6,46 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:20:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 17:11:28 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/27 18:28:50 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	ft_exit(t_list *ps)
+{
+	int	i;
+
+	i = 0;
+	free(ps->stacka);
+	free(ps->stackb);
+	free(ps->fakea);
+	free(ps->index);
+	if (ps->split)
+	{
+		while (i <= ps->fakealen)
+		{
+			free(ps->split[i]);
+			i++;
+		}
+		free(ps->split);
+	}
+	free(ps);
+	printf("Error\n");
+	system("leaks push_swap");
+	exit(0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*ps;
-	int		i;
-	int		a;
 	int		x;
 
-	i = 0;
-	a = 0;
 	x = argc - 1;
 	ps = malloc(sizeof(t_list) * x);
-	ps->stacka = malloc(sizeof(int) * x);
-	ps->stackb = malloc(sizeof(int) * x);
-	ps->fakea = malloc(sizeof(int) * x);
-	ps->index = malloc(sizeof(int) * x);
-	ps->alen = x;
-	ps->fakealen = ps->alen;
-	while (i < x)
-	{
-		ps->stacka[i] = atoi(argv[i + 1]);
-		i++;
-	}
+	if (!ps)
+		return (0);
+	setup(ps, x, argv);
 	ft_sort(ps);
 	if (!sortcontrol(ps))
 		return (0);

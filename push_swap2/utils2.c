@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:06:28 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 14:54:32 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/27 17:25:16 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	shift_up(int *arr, int len)
 void	shift_down(int *arr, int len)
 {
 	int	i;
-	int	temp;
 	int	*arr1;
 
 	i = 0;
@@ -57,7 +56,6 @@ void	shift_down(int *arr, int len)
 int	indexbul(t_list *ps, int nbr)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	while (i < ps->fakealen)

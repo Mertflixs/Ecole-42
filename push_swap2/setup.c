@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   setup.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 13:34:35 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 18:23:39 by agunes           ###   ########.fr       */
+/*   Created: 2022/05/27 17:52:26 by agunes            #+#    #+#             */
+/*   Updated: 2022/05/27 18:29:06 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	radix(t_list *ps)
+void	setup(t_list *ps, int x, char **argv)
 {
 	int	i;
 	int	j;
-	int	x;
+	int	k;
 
+	i = 1;
+	k = 0;
 	j = 0;
-	i = 0;
-	x = 0;
-	ps->maxbit = maxbit(ps);
-	while (i < ps->maxbit)
+	ps->stacka = malloc(sizeof(int) * x);
+	ps->stackb = malloc(sizeof(int) * x);
+	ps->fakea = malloc(sizeof(int) * x);
+	ps->index = malloc(sizeof(int) * x);
+	while (argv[i])
 	{
 		j = 0;
-		while (j < ps->fakealen)
+		ps->split = ft_split(argv[i], ' ');
+		while (ps->split[j])
 		{
-			x = indexbul(ps, ps->stacka[0]);
-			if ((x >> i) & 1)
-				ra(ps, ps->alen);
-			else
-				pb(ps);
-			j++;
+			if (!ft_atoi(ps->split[j]))
+				ft_exit(ps);
+			ps->stacka[k++] = ft_atoi(ps->split[j++]);
 		}
-		while (ps->blen)
-			pa(ps);
 		i++;
 	}
+	ps->fakealen = i - 1;
+	ps->alen = i - 1;
 }
