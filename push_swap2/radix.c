@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:34:35 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 14:55:12 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/27 16:58:59 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	radix(t_list *ps)
 	j = 0;
 	i = 0;
 	x = 0;
+	ps->maxbit = maxbit(ps);
 	while (i < ps->maxbit)
 	{
 		j = 0;

@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:20:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 16:53:29 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/27 16:58:49 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ int	main(int argc, char **argv)
 	}
 	if (!ft_sort(ps))
 		return (0);
-	ps->maxbit = maxbit(ps);
 	radix(ps);
 }

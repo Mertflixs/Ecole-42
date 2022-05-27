@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:19:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 15:00:21 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/27 17:01:24 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_list
 	int	*index;
 	int	maxbit;
 	int	alen;
-	int fakealen;
+	int	fakealen;
 	int	blen;
 }		t_list;
 
@@ -41,5 +41,6 @@ int		ft_sort(t_list *ps);
 int		indexbul(t_list *ps, int nbr);
 void	radix(t_list *ps);
 int		maxbit(t_list *ps);
+int		sortcontrol(t_list *ps);
 
 #endif
