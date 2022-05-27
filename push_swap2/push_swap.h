@@ -43,10 +43,11 @@ int		indexbul(t_list *ps, int nbr);
 void	radix(t_list *ps);
 int		maxbit(t_list *ps);
 int		sortcontrol(t_list *ps);
-int		ft_atoi(char *s);
+int		ft_atoi(char *s, t_list *ps);
 int		isaretcontrol(char *s);
 void	setup(t_list *ps, int x, char **argv);
 char	**ft_split(char const *s, char c);
 void	ft_exit(t_list *ps);
+int		same(t_list *ps);
 
 #endif

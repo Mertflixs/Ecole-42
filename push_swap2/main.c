@@ -21,13 +21,10 @@ void	ft_exit(t_list *ps)
 	free(ps->stackb);
 	free(ps->fakea);
 	free(ps->index);
-	if (ps->split)
+	if(ps->split)
 	{
-		while (i <= ps->fakealen)
-		{
-			free(ps->split[i]);
-			i++;
-		}
+		free(ps->split[0]);
+		free(ps->split[1]);
 		free(ps->split);
 	}
 	free(ps);
@@ -49,5 +46,7 @@ int	main(int argc, char **argv)
 	ft_sort(ps);
 	if (!sortcontrol(ps))
 		return (0);
+	if (!same(ps))
+		ft_exit(ps);
 	radix(ps);
 }

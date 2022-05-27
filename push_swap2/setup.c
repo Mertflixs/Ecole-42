@@ -30,11 +30,10 @@ void	setup(t_list *ps, int x, char **argv)
 		j = 0;
 		ps->split = ft_split(argv[i], ' ');
 		while (ps->split[j])
-		{
-			if (!ft_atoi(ps->split[j]))
-				ft_exit(ps);
-			ps->stacka[k++] = ft_atoi(ps->split[j++]);
-		}
+			ps->stacka[k++] = ft_atoi(ps->split[j++], ps);
+		free(ps->split[0]);
+		free(ps->split[1]);
+		free(ps->split);
 		i++;
 	}
 	ps->fakealen = i - 1;

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(char *str, t_list *ps)
 {
 	int			i;
 	long int	sayi;
@@ -23,18 +23,18 @@ int	ft_atoi(char *str)
 	isaret = 1;
 	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-')
 		isaret -= (str[i++] == '-') * 2;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		sayi = (sayi * 10) + str[i] - '0';
 		i++;
 		if (sayi * isaret > 2147483647)
-			return (-1);
+			ft_exit(ps);
 		if (sayi * isaret < -2147483648)
-			return (0);
+			ft_exit(ps);
 	}
 	if (str[i] != '\0')
-		return (0);
+		ft_exit(ps);
 	return (sayi * isaret);
 }
