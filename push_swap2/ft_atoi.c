@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:12:36 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/28 17:59:30 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/28 18:38:41 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int	ft_atoi(char *str, t_list *ps)
 		ft_exit(ps, 0);
 	if ((str[0] == '+' && str[1] == '\0') || \
 		(str[0] == '-' && str[1] == '\0'))
-		ft_exit(ps, 0);
+		ft_exit(ps, 1);
 	return (sayi * isaret);
 }

@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:52:26 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/28 18:35:46 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/28 18:38:19 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ void	setup(t_list *ps, int x, char **argv)
 		j = 0;
 		ps->split = ft_split(argv[i], ' ');
 		while (ps->split[j])
-		{
-			ps->stacka[k++] = ft_atoi(ps->split[j], ps);
-			printf("adres = %p\n", ps->split[j++]);
-		}
+			ps->stacka[k++] = ft_atoi(ps->split[j++], ps);
 		j = 0;
 		while (ps->split && ps->split[j])
 			free(ps->split[j++]);
