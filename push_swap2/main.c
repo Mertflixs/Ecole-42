@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:20:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 18:28:50 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/28 13:24:43 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_exit(t_list *ps, int x)
 	free(ps->stackb);
 	free(ps->fakea);
 	free(ps->index);
-	if(x != 1)
+	if (x != 1)
 	{
 		free(ps->split[0]);
 		free(ps->split);
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	int		x;
 
 	x = argc - 1;
-	ps = malloc(sizeof(t_list) * x);
+	ps = malloc(sizeof(t_list));
 	if (!ps)
 		return (0);
 	setup(ps, x, argv);
