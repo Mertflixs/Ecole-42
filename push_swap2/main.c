@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:20:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/28 18:40:31 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/28 18:45:24 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_exit(t_list *ps, int x)
 		free(ps->split);
 	}
 	free(ps);
-	system("leaks push_swap");
 	exit(0);
 }
 
