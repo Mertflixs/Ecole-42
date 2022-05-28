@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:19:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 18:16:04 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/28 17:57:26 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ void	setup(t_list *ps, int x, char **argv);
 char	**ft_split(char const *s, char c);
 void	ft_exit(t_list *ps, int x);
 int		same(t_list *ps);
+int		argval(t_list *ps, char **argv);
 
 #endif

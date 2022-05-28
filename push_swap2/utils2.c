@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:06:28 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 17:25:16 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/28 18:33:02 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	shift_up(int *arr, int len)
 		arr[i] = arr1[i];
 		i++;
 	}
+	free(arr1);
 }
 
 void	shift_down(int *arr, int len)
@@ -50,6 +51,7 @@ void	shift_down(int *arr, int len)
 		arr[i + 1] = arr1[i];
 		i++;
 	}
+	free(arr1);
 	arr[0] = 0;
 }
 
