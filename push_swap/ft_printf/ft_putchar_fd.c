@@ -1,39 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   control.c                                          :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 13:23:00 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/28 13:24:02 by agunes           ###   ########.fr       */
+/*   Created: 2022/02/15 17:32:40 by agunes            #+#    #+#             */
+/*   Updated: 2022/02/15 17:32:42 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	same(t_list *ps)
+int	ft_putchar_fd(char c)
 {
-	int	i;
-	int	j;
-	int	sayi;
-
-	i = 0;
-	j = 0;
-	sayi = 0;
-	while (i < ps->alen)
-	{
-		j = 0;
-		sayi = 0;
-		while (j < ps->alen)
-		{
-			if (ps->stacka[j] == ps->stacka[i])
-				sayi++;
-			if (sayi > 1)
-				ft_exit(ps, 1);
-			j++;
-		}
-		i++;
-	}
+	write(1, &c, 1);
 	return (1);
 }

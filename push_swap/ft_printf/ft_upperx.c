@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   ft_upperx.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 13:34:35 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 18:23:39 by agunes           ###   ########.fr       */
+/*   Created: 2022/02/15 17:33:06 by agunes            #+#    #+#             */
+/*   Updated: 2022/02/23 13:30:10 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-void	radix(t_list *ps)
+int	ft_upperx(unsigned int a, int *len)
 {
-	int	i;
-	int	j;
-	int	x;
-
-	j = 0;
-	i = 0;
-	x = 0;
-	ps->maxbit = maxbit(ps);
-	while (i < ps->maxbit)
+	if (a < 16)
 	{
-		j = 0;
-		while (j < ps->fakealen)
+		if (a < 10)
 		{
-			x = indexbul(ps, ps->stacka[0]);
-			if ((x >> i) & 1)
-				ra(ps, ps->alen);
-			else
-				pb(ps);
-			j++;
+			*len += ft_putchar_fd(a + 48);
 		}
-		while (ps->blen)
-			pa(ps);
-		i++;
+		else
+			*len += ft_putchar_fd(a + 55);
 	}
+	else
+	{
+		ft_upperx(a / 16, len);
+		ft_upperx(a % 16, len);
+	}
+	return (*len);
 }

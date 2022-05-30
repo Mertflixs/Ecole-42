@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:06:28 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/28 18:33:02 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/30 18:06:52 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	shift_down(int *arr, int len)
 	arr[0] = 0;
 }
 
-int	indexbul(t_list *ps, int nbr)
+int	findindex(t_list *ps, int nbr)
 {
 	int	i;
 

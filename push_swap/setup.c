@@ -6,13 +6,13 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:52:26 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/28 18:38:19 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/30 18:00:27 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	setup(t_list *ps, int x, char **argv)
+void	setup(t_list *ps, char **argv)
 {
 	int	i;
 	int	j;

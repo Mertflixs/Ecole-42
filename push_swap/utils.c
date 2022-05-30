@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:05:49 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/27 17:10:44 by agunes           ###   ########.fr       */
+/*   Updated: 2022/05/30 17:49:51 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ra(t_list *ps, int len)
 		i++;
 	}
 	ps->stacka[ps->alen - 1] = temp;
-	printf("ra\n");
+	ft_printf("ra\n");
 }
 
 void	pb(t_list *ps)
@@ -45,7 +45,7 @@ void	pb(t_list *ps)
 		ps->alen--;
 		ps->blen++;
 	}
-	printf("pb\n");
+	ft_printf("pb\n");
 }
 
 void	pa(t_list *ps)
@@ -65,7 +65,7 @@ void	pa(t_list *ps)
 		ps->blen--;
 		ps->alen++;
 	}
-	printf("pa\n");
+	ft_printf("pa\n");
 }
 
 void	ft_sort(t_list *ps)
