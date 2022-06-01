@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:12:36 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/30 18:41:14 by agunes           ###   ########.fr       */
+/*   Updated: 2022/06/01 12:40:04 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_atoi(char *str, t_list *ps)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		sign -= (str[i++] == '-') * 2;
-		if (str[i] == '+' || str[i] == '-')
+		if (str[i] == '+' || str[i] == '-' || str[i] == '\0')
 			ft_exit(ps, 2);
 	}
 	while (str[i] >= '0' && str[i] <= '9')
