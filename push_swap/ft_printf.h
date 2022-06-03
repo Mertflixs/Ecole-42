@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 17:32:29 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/30 18:03:45 by agunes           ###   ########.fr       */
+/*   Updated: 2022/02/23 13:32:05 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <stdio.h>
 # include <unistd.h>
 
 int	ft_printf(const char *s, ...);
