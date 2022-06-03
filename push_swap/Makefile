@@ -1,36 +1,40 @@
-NAME	= libftprintf
+NAME = push_swap
 CC = gcc
-INC = ft_printf.h
 CFLAGS = -Wall -Wextra -Werror
+SRCS = control.c \
+	fivearg.c \
+	ft_atoi.c \
+	ft_split.c \
+	main.c \
+	radix.c		\
+	setup.c	\
+	threearg.c	\
+	utils.c	\
+	utils2.c	\
 
-SRCS	= ft_lowerx.c \
-			ft_pointer.c \
-			ft_printf.c \
-			ft_putchar_fd.c \
-			ft_putnbr_fd.c \
-			ft_putstr_fd.c \
-			ft_unsigned.c \
-			ft_upperx.c 
 
-OBJS = $(SRCS:.c=.o)
+OBJS= $(SRCS:.c=.o)
+PRIN = ./ft_printf/libftprintf.a
+all: $(PRIN)  ${NAME}
+$(PRIN):
+	@make -C ./ft_printf
 
-all: $(NAME).a
 
-$(NAME).a: $(OBJS)
-	@ar -rcs $(NAME).a $(OBJS)
-	@echo "\x1B[1;36mDerleme işlemi tamamlandı.\x1B[1;36m"
+$(NAME): $(OBJS) $(PRIN)
+	@$(CC) ${CFLAGS} $(OBJS) -o $(NAME) $(PRIN)
 
-%.o: %.c $(INC)
-	@$(CC) -c $< -o $@ $(CFLAGS)
-	@echo "\033[92mDerleme işlemi devam ediyor.\033[0m"
-
+%.o: %.c
+	@echo $(R)Complining: [$<]
+	@${CC} -c $^ -o $@ -Wall -Werror -Wextra
 
 clean:
-	rm -rf $(OBJS)
+	@rm -rf ${OBJS}
+	@make clean -C ft_printf/
 
 fclean: clean
-	rm -rf $(NAME).a
+	@rm -rf ${NAME}
+	@make fclean -C ft_printf/
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: fclean re all clean

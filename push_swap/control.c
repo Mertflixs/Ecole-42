@@ -6,13 +6,13 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 13:23:00 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/30 11:05:57 by agunes           ###   ########.fr       */
+/*   Updated: 2022/06/03 13:29:49 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	same(t_list *ps)
+void	sameargs(t_list *ps)
 {
 	int	i;
 	int	j;
@@ -35,5 +35,21 @@ int	same(t_list *ps)
 		}
 		i++;
 	}
-	return (1);
+}
+
+void	sortcontrol(t_list *ps)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < ps->alen)
+	{
+		if (ps->fakea[i] == ps->stacka[i])
+			j++;
+		i++;
+	}
+	if (j == i)
+		exit (0);
 }

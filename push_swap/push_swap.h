@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:19:45 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/30 18:06:46 by agunes           ###   ########.fr       */
+/*   Updated: 2022/06/03 14:28:32 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -41,13 +42,13 @@ void	ft_sort(t_list *ps);
 int		findindex(t_list *ps, int nbr);
 void	radix(t_list *ps);
 int		maxbit(t_list *ps);
-int		sortcontrol(t_list *ps);
+void	sortcontrol(t_list *ps);
 int		ft_atoi(char *s, t_list *ps);
 int		isaretcontrol(char *s);
 void	setup(t_list *ps, char **argv);
 char	**ft_split(char const *s, char c);
 void	ft_exit(t_list *ps, int x);
-int		same(t_list *ps);
+void	sameargs(t_list *ps);
 int		argval(t_list *ps, char **argv);
 void	fivearg(t_list *ps);
 int		find_min(t_list *ps);

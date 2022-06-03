@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:20:06 by agunes            #+#    #+#             */
-/*   Updated: 2022/05/30 18:01:05 by agunes           ###   ########.fr       */
+/*   Updated: 2022/06/03 14:53:01 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,15 @@ void	ft_exit(t_list *ps, int x)
 int	main(int argc, char **argv)
 {
 	t_list	*ps;
-	int		x;
 
-	x = argc - 1;
-	ps = malloc(sizeof(t_list) * x);
+	argc = 0;
+	ps = malloc(sizeof(t_list));
 	if (!ps)
 		return (0);
 	setup(ps, argv);
 	ft_sort(ps);
-	if (!sortcontrol(ps))
-		return (0);
-	if (!same(ps))
-		return (0);
+	sameargs(ps);
+	sortcontrol(ps);
 	if (ps->alen == 5)
 		fivearg(ps);
 	if (ps->alen == 3)
