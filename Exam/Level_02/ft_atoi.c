@@ -6,9 +6,11 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 11:59:05 by agunes            #+#    #+#             */
-/*   Updated: 2022/06/09 11:59:06 by agunes           ###   ########.fr       */
+/*   Updated: 2022/06/11 11:42:26 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 int	ft_atoi(char *s1)
 {
@@ -33,4 +35,10 @@ int	ft_atoi(char *s1)
 		i++;
 	}
 	return (sayi * isaret);
+}
+
+int main(void)
+{
+	char dizi[] = "123456";
+	printf("%d", ft_atoi(dizi));
 }
