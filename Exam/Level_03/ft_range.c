@@ -6,7 +6,7 @@
 /*   By: agunes <agunes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 11:59:41 by agunes            #+#    #+#             */
-/*   Updated: 2022/06/09 11:59:42 by agunes           ###   ########.fr       */
+/*   Updated: 2022/06/11 11:36:27 by agunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,27 @@
 #include <stdlib.h>
 int     *ft_range(int start, int end)
 {
-	int *arr;
-	int i;
-	int temp = start;
+	int i = 0;
+	int *arr = malloc(sizeof(int) * 100);
 
-	i = 0;
-	arr = malloc(100);
-	if(end < start)
+	if(start <= end)
 	{
-		start = end;
-		end = temp;
+		while(start < end)
+		{
+			arr[i] = start;
+			i++;
+			start++;
+		}
 	}
-	while(start <= end)
+	if(start >= end)
 	{
-		arr[i] = start;
-		start++;
-		i++;
+		while(start >= end)
+		{
+			arr[i] = start;
+			start--;
+			i++;
+		}
 	}
-	arr[i] = start;
 	return (arr);
 }
 
@@ -40,9 +43,9 @@ int main(void)
 	int i; 
 	int *arr;
 
-	arr = ft_range(5, -1);
+	arr = ft_range(-1, 2);
 
 	i = 0;
-	while(i < 10)
-		printf("%d", arr[i++]);
+	while(i <= 4)
+		printf("%d\n", arr[i++]);
 }
